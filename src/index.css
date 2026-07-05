@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gh-blue: #0969da;
+  --color-gh-green: #2da44e;
+  --color-gh-green-hover: #2c974b;
+  --color-gh-gray-border: #d0d7de;
+  --color-gh-gray-bg: #f6f8fa;
+  --color-gh-gray-text: #57606a;
+}
+
+@layer components {
+  .gh-card {
+    @apply bg-white border border-gh-gray-border rounded-md shadow-sm;
+  }
+  
+  .gh-button-primary {
+    @apply bg-gh-green text-white px-4 py-1.5 rounded-md font-semibold text-sm hover:bg-gh-green-hover transition-colors shadow-sm disabled:opacity-50;
+  }
+
+  .gh-button-secondary {
+    @apply bg-gh-gray-bg text-slate-900 border border-gh-gray-border px-4 py-1.5 rounded-md font-semibold text-sm hover:bg-[#ebecf0] transition-colors shadow-sm;
+  }
+
+  .gh-input {
+    @apply bg-gh-gray-bg border border-gh-gray-border rounded-md px-3 py-1.5 text-sm focus:bg-white focus:border-gh-blue focus:ring-1 focus:ring-gh-blue outline-none transition-all;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased font-sans;
+  }
+}
+
+body{
+  background-color: black; 
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300;
+}
